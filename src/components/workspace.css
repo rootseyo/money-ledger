@@ -1,0 +1,1359 @@
+/* ========================================================
+   Workspace Management Page Styles
+   Modern Dark Slate & Glassmorphism Theme
+   ======================================================== */
+
+.ws-page {
+  min-height: 100dvh;
+  background: radial-gradient(circle at 50% 0%, #162438 0%, #090d16 65%);
+  color: #f8fafc;
+  padding: 32px 16px 80px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Pretendard Variable", Pretendard, sans-serif;
+}
+
+.ws-container {
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Top Navigation Header --- */
+.ws-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 4px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ws-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.16s ease;
+}
+
+.ws-back-link:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(-2px);
+}
+
+.ws-brand-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.ws-nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ws-user-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #cbd5e1;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.ws-user-chip strong {
+  color: #f8fafc;
+}
+
+/* --- Main Glassmorphic Cards --- */
+.ws-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.ws-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ws-card-title-group h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 4px 0;
+  color: #f8fafc;
+  letter-spacing: -0.02em;
+}
+
+.ws-card-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Hero Stats Row */
+.ws-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 16px 0 20px;
+}
+
+.ws-stat-item {
+  background: rgba(26, 38, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ws-stat-label {
+  font-size: 11px;
+  color: #8da2bb;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ws-stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.ws-stat-value small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #94a3b8;
+  margin-left: 4px;
+}
+
+/* Primary CTA Button */
+.ws-btn-open-ledger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.28);
+  transition: all 0.18s ease;
+  text-decoration: none;
+}
+
+.ws-btn-open-ledger:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  transform: translateY(-1px);
+}
+
+/* --- Role Badges --- */
+.ws-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ws-badge-admin {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.ws-badge-editor {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.ws-badge-viewer {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.ws-badge-owner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.1));
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+/* --- Modern Segmented Tabs --- */
+.ws-tabs-bar {
+  display: flex;
+  background: rgba(11, 17, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  margin: 20px 0;
+}
+
+.ws-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ws-tab-btn:hover {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ws-tab-btn.is-active {
+  background: rgba(30, 41, 59, 0.9);
+  color: #51d2a3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ws-tab-count {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+}
+
+/* --- Role Explanatory Callout --- */
+.ws-role-guide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  padding: 14px;
+  background: rgba(18, 26, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.ws-role-guide-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.ws-role-guide-item strong {
+  color: #e2e8f0;
+  display: block;
+  font-size: 12px;
+}
+
+/* --- Member List --- */
+.ws-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ws-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: rgba(20, 29, 46, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  gap: 12px;
+  transition: border-color 0.15s ease;
+}
+
+.ws-item:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.ws-member-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.ws-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  color: #93c5fd;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.ws-member-text {
+  min-width: 0;
+}
+
+.ws-member-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ws-member-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #f8fafc;
+}
+
+.ws-me-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+}
+
+.ws-member-email {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ws-member-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.ws-select {
+  background: #0d1524;
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.ws-select:hover {
+  border-color: #51d2a3;
+}
+
+.ws-select:focus-visible {
+  outline: 2px solid #51d2a3;
+  outline-offset: 2px;
+}
+
+/* Button styles */
+.ws-btn-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.ws-btn-subtle {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.ws-btn-subtle:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.ws-btn-danger-sm {
+  background: rgba(239, 68, 68, 0.08);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.ws-btn-danger-sm:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.ws-btn-primary-sm {
+  background: #1e3a5f;
+  color: #93c5fd;
+  border-color: #2b5182;
+}
+
+.ws-btn-primary-sm:hover:not(:disabled) {
+  background: #254a78;
+  color: #bfdbfe;
+}
+
+/* --- Invite Creation Box --- */
+.ws-create-invite-box {
+  background: rgba(20, 29, 46, 0.7);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.ws-create-invite-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ws-create-invite-header h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.ws-create-invite-desc {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0 0 16px;
+}
+
+.ws-role-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ws-role-card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(11, 18, 32, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.16s ease;
+}
+
+.ws-role-card:hover {
+  border-color: rgba(96, 165, 250, 0.35);
+  background: rgba(18, 28, 48, 0.8);
+}
+
+.ws-role-card.is-selected {
+  border-color: #51d2a3;
+  background: rgba(16, 185, 129, 0.08);
+  box-shadow: 0 0 0 1px #51d2a3;
+}
+
+.ws-role-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.ws-role-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.ws-role-card-desc {
+  font-size: 11px;
+  color: #8da2bb;
+  line-height: 1.4;
+}
+
+.ws-invite-create-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Invite Items */
+.ws-invite-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: rgba(20, 29, 46, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ws-invite-code-pill {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+  background: rgba(14, 25, 43, 0.9);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.ws-invite-meta-text {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* --- Empty States --- */
+.ws-empty-state {
+  text-align: center;
+  padding: 36px 16px;
+  color: #64748b;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ws-empty-state svg {
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+/* --- Household Settings Tab (Actions) --- */
+.ws-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ws-action-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: rgba(20, 29, 46, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  gap: 16px;
+}
+
+.ws-action-text h4 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.ws-action-text p {
+  margin: 0;
+  font-size: 12px;
+  color: #8da2bb;
+  line-height: 1.45;
+}
+
+.ws-danger-card {
+  background: rgba(239, 68, 68, 0.04);
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+.ws-danger-card h4 {
+  color: #fca5a5;
+}
+
+/* --- Creation / Join Choices (When no household) --- */
+.ws-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.ws-choice-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s ease;
+}
+
+.ws-choice-btn:hover {
+  background: rgba(25, 36, 58, 0.7);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.ws-choice-btn.is-selected {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: #51d2a3;
+  color: #f8fafc;
+  box-shadow: 0 0 0 1px #51d2a3;
+}
+
+.ws-choice-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  display: grid;
+  place-items: center;
+  color: #51d2a3;
+  flex-shrink: 0;
+}
+
+.ws-choice-info strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.ws-choice-info small {
+  display: block;
+  font-size: 12px;
+  color: #8da2bb;
+  line-height: 1.4;
+}
+
+/* Forms */
+.ws-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.ws-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ws-field-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.ws-input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #090e17;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #f8fafc;
+  font-size: 14px;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.ws-input:focus-visible {
+  outline: 2px solid #51d2a3;
+  border-color: #51d2a3;
+}
+
+.ws-goal-presets {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.ws-preset-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.ws-preset-chip:hover {
+  background: rgba(81, 210, 163, 0.12);
+  border-color: rgba(81, 210, 163, 0.3);
+  color: #51d2a3;
+}
+
+.ws-korean-amount-preview {
+  font-size: 12px;
+  color: #51d2a3;
+  font-weight: 600;
+}
+
+/* --- Account & Security Card --- */
+.ws-account-card {
+  margin-top: 10px;
+  background: rgba(13, 19, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+
+.ws-account-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ws-account-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ws-account-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ws-account-info-text {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.ws-account-info-text strong {
+  color: #f1f5f9;
+  margin-left: 6px;
+}
+
+.ws-account-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Danger Zone Accordion */
+.ws-danger-details {
+  margin-top: 14px;
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: 10px;
+  background: rgba(239, 68, 68, 0.03);
+  overflow: hidden;
+}
+
+.ws-danger-summary {
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f87171;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ws-danger-summary:hover {
+  background: rgba(239, 68, 68, 0.07);
+}
+
+.ws-danger-content {
+  padding: 16px;
+  border-top: 1px solid rgba(239, 68, 68, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ws-danger-content p {
+  margin: 0;
+  font-size: 12px;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+/* Toast Notice */
+.ws-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981;
+  color: #022c19;
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  animation: ws-toast-in 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@keyframes ws-toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 14px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .ws-page {
+    padding: 16px 12px 60px;
+  }
+  .ws-card {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+  .ws-choice-grid {
+    grid-template-columns: 1fr;
+  }
+  .ws-role-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .ws-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .ws-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ws-member-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .ws-invite-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ws-action-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Flat workspace refresh: clear sections, quiet surfaces, unified duotone icons. */
+.ws-page {
+  --ws-bg: #0b1016;
+  --ws-surface: #101820;
+  --ws-line: #26333d;
+  --ws-text: #edf3f5;
+  --ws-muted: #93a2ac;
+  --ws-accent: #61d7b0;
+  --ws-icon-primary: #68d7b2;
+  --ws-icon-secondary: #8fb8f3;
+  padding: 24px 28px 72px;
+  background: var(--ws-bg);
+  color: var(--ws-text);
+  font-size: 15px;
+}
+html:has(.ws-page),
+body:has(.ws-page) {
+  background: #f5f7f6 !important;
+  background-image: none !important;
+  color: #17241f;
+}
+
+.ws-container { max-width: 980px; gap: 0; }
+.ws-nav-header {
+  min-height: 56px;
+  padding: 0 0 16px;
+  border-color: var(--ws-line);
+}
+.ws-back-link {
+  padding: 6px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.ws-back-link:hover { background: transparent; transform: none; color: var(--ws-accent); }
+.ws-brand-title { font-size: 15px; letter-spacing: -.02em; }
+.ws-user-chip { padding: 0; border: 0; border-radius: 0; background: transparent; }
+
+/* Section wrappers no longer read as floating islands. */
+.ws-card,
+.ws-account-card {
+  padding: 28px 0;
+  border: 0;
+  border-bottom: 1px solid var(--ws-line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.ws-card:first-of-type { padding-top: 28px; }
+.ws-card-header { margin-bottom: 20px; }
+.ws-card-title-group h2 { font-size: clamp(25px, 3vw, 32px); letter-spacing: -.04em; }
+.ws-card-subtitle { color: var(--ws-muted); }
+
+.ws-stats-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 24px 0 26px;
+  border-top: 1px solid var(--ws-line);
+  border-bottom: 1px solid var(--ws-line);
+}
+.ws-stat-item {
+  min-height: 76px;
+  justify-content: center;
+  padding: 12px 20px;
+  border: 0;
+  border-right: 1px solid var(--ws-line);
+  border-radius: 0;
+  background: transparent;
+}
+.ws-stat-item:first-child { padding-left: 0; }
+.ws-stat-item:last-child { border-right: 0; }
+.ws-stat-label { color: var(--ws-muted); }
+.ws-stat-value { font-size: 18px; }
+
+.ws-btn-open-ledger {
+  min-height: 48px;
+  border-radius: 8px;
+  background: var(--ws-accent);
+  color: #08271e;
+  box-shadow: none;
+}
+.ws-btn-open-ledger:hover {
+  background: #7be4c2;
+  box-shadow: none;
+  transform: none;
+}
+
+.ws-badge {
+  padding: 2px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.ws-badge-admin { color: #8fb8f3; }
+.ws-badge-editor { color: var(--ws-accent); }
+.ws-badge-viewer { color: #b6a0ee; }
+.ws-badge-owner { color: #e6bc72; background: transparent; }
+
+.ws-card:has(.ws-tabs-bar) { padding: 20px 0 28px !important; }
+.ws-tabs-bar {
+  gap: 26px;
+  margin: 0 0 24px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--ws-line);
+  border-radius: 0;
+  background: transparent;
+}
+.ws-tab-btn {
+  position: relative;
+  flex: 0 1 auto;
+  justify-content: flex-start;
+  padding: 12px 0 14px;
+  border-radius: 0;
+  color: var(--ws-muted);
+}
+.ws-tab-btn:hover { color: var(--ws-text); background: transparent; }
+.ws-tab-btn.is-active {
+  border: 0;
+  background: transparent;
+  color: var(--ws-accent);
+  box-shadow: inset 0 -2px var(--ws-accent);
+}
+.ws-tab-count { padding: 0 6px; border-radius: 4px; background: #1b2831; }
+
+.ws-role-guide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0 0 18px;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid var(--ws-line);
+  border-radius: 0;
+  background: transparent;
+}
+.ws-role-guide-item { padding: 0 14px; }
+.ws-role-guide-item:first-child { padding-left: 0; }
+.ws-role-guide-item + .ws-role-guide-item { border-left: 1px solid var(--ws-line); }
+.ws-role-guide-item strong { color: var(--ws-text); }
+
+.ws-list { gap: 0; }
+.ws-item,
+.ws-invite-item {
+  min-height: 68px;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid var(--ws-line);
+  border-radius: 0;
+  background: transparent;
+}
+.ws-item:hover { border-color: var(--ws-line); }
+.ws-avatar {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #35434d;
+  background: #18232b;
+  color: #b9c7cf;
+}
+.ws-member-name { color: var(--ws-text); }
+.ws-member-email { color: var(--ws-muted); }
+.ws-me-tag { padding: 1px 5px; border-radius: 3px; background: #1b2831; }
+
+.ws-create-invite-box {
+  margin: 4px 0 16px;
+  padding: 18px 0;
+  border: 0;
+  border-top: 1px solid var(--ws-line);
+  border-bottom: 1px solid var(--ws-line);
+  border-radius: 0;
+  background: transparent;
+}
+.ws-role-cards-grid { gap: 0; }
+.ws-role-card {
+  min-height: 72px;
+  justify-content: center;
+  padding: 12px;
+  border: 0;
+  border-bottom: 1px solid var(--ws-line);
+  border-radius: 0;
+  background: transparent;
+}
+.ws-role-card:hover { border-color: var(--ws-line); background: #111b22; }
+.ws-role-card.is-selected {
+  border-color: var(--ws-accent);
+  background: #111b22;
+  box-shadow: inset 3px 0 var(--ws-accent);
+}
+.ws-invite-code-pill { padding: 2px 0; border: 0; border-radius: 0; background: transparent; color: var(--ws-icon-secondary); }
+
+.ws-settings-section { gap: 0; }
+.ws-form { max-width: 620px; margin: 8px 0 24px; }
+.ws-form h3 { margin: 0; font-size: 18px; }
+.ws-field-group { gap: 8px; }
+.ws-field-group label { color: var(--ws-text); }
+.ws-field-group small { color: var(--ws-muted); line-height: 1.55; }
+.ws-input,
+.ws-select {
+  min-height: 44px;
+  border: 1px solid #34434d;
+  border-radius: 6px;
+  background: #0e161d;
+  color: var(--ws-text);
+}
+.ws-input:focus-visible { outline-color: var(--ws-accent); border-color: var(--ws-accent); }
+.ws-action-card {
+  padding: 18px 0;
+  border: 0;
+  border-top: 1px solid var(--ws-line);
+  border-radius: 0;
+  background: transparent;
+}
+.ws-danger-card { border-color: #51343a; background: transparent; }
+.ws-action-text h4 { color: var(--ws-text); }
+.ws-action-text p { color: var(--ws-muted); }
+
+.ws-choice-grid { gap: 0 24px; }
+.ws-choice-btn {
+  padding: 18px 4px;
+  border: 0;
+  border-bottom: 1px solid var(--ws-line);
+  border-radius: 0;
+  background: transparent;
+}
+.ws-choice-btn:hover { transform: none; border-color: #3e515b; background: transparent; }
+.ws-choice-btn.is-selected { border-color: var(--ws-accent); background: transparent; box-shadow: inset 0 -2px var(--ws-accent); }
+.ws-choice-icon {
+  width: auto;
+  height: auto;
+  min-width: 28px;
+  background: transparent;
+  color: var(--ws-icon-primary);
+}
+.ws-choice-info small { color: var(--ws-muted); }
+.ws-preset-chip { border-radius: 4px; }
+.ws-korean-amount-preview { color: var(--ws-accent); }
+
+.ws-account-card { margin-top: 0; padding: 24px 0; }
+.ws-account-title { color: var(--ws-text); }
+.ws-account-row { border-color: var(--ws-line); }
+.ws-account-info-text { color: var(--ws-muted); }
+.ws-danger-details { border-radius: 6px; background: transparent; }
+.ws-danger-summary:hover { background: #17191d; }
+.ws-toast { border-radius: 6px; box-shadow: 0 6px 20px #0005; }
+
+/* One icon language throughout the workspace; no pastel icon tiles. */
+.ws-page svg {
+  color: var(--ws-icon-primary) !important;
+  overflow: visible;
+}
+.ws-page svg :is(path, line, polyline, polygon, rect, circle, ellipse) {
+  stroke: var(--ws-icon-primary) !important;
+}
+.ws-page svg :is(path, line, polyline, polygon, rect, circle, ellipse):nth-of-type(even) {
+  stroke: var(--ws-icon-secondary) !important;
+}
+.ws-page :is(.ws-choice-icon, .ws-stat-item, .ws-tab-btn, .ws-btn-sm, .ws-action-card) svg {
+  filter: none;
+}
+.ws-page :is(button, a, select, input):focus-visible { outline: 2px solid var(--ws-accent); outline-offset: 3px; }
+.ws-page :is(button, a, select):disabled { cursor: not-allowed; opacity: .55; }
+
+@media (max-width: 640px) {
+  .ws-page { padding: 14px 18px 52px; }
+  .ws-container { gap: 0; }
+  .ws-nav-header { gap: 10px; }
+  .ws-brand-title { display: none; }
+  .ws-user-chip { font-size: 11px; }
+  .ws-card, .ws-account-card { padding: 22px 0; }
+  .ws-stats-grid { grid-template-columns: 1fr; }
+  .ws-stat-item,
+  .ws-stat-item:first-child { min-height: 62px; padding: 10px 0; border-right: 0; border-bottom: 1px solid var(--ws-line); }
+  .ws-stat-item:last-child { border-bottom: 0; }
+  .ws-tabs-bar { gap: 18px; overflow-x: auto; }
+  .ws-tab-btn { flex: 0 0 auto; font-size: 12px; }
+  .ws-role-guide { grid-template-columns: 1fr; gap: 12px; }
+  .ws-role-guide-item,
+  .ws-role-guide-item:first-child { padding: 0; }
+  .ws-role-guide-item + .ws-role-guide-item { border: 0; }
+  .ws-item,
+  .ws-invite-item,
+  .ws-action-card { flex-direction: row; align-items: center; }
+  .ws-item { flex-wrap: wrap; }
+  .ws-member-actions { width: 100%; justify-content: flex-start; padding-left: 48px; }
+  .ws-choice-grid { grid-template-columns: 1fr; }
+  .ws-account-header { align-items: flex-start; }
+  .ws-account-row { align-items: flex-start; }
+  .ws-account-actions-row { justify-content: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ws-page *, .ws-page *::before, .ws-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* Light theme is the default for workspace management. */
+.ws-page {
+  --ws-bg: #f5f7f6;
+  --ws-surface: #ffffff;
+  --ws-line: #dce4e1;
+  --ws-text: #17241f;
+  --ws-muted: #56675f;
+  --ws-accent: #147a59;
+  --ws-icon-primary: #16835f;
+  --ws-icon-secondary: #496db5;
+  background: var(--ws-bg);
+  color: var(--ws-text);
+}
+.ws-page .ws-nav-header { border-color: var(--ws-line); }
+.ws-page .ws-back-link { color: #45574f; }
+.ws-page .ws-back-link:hover { color: var(--ws-accent); }
+.ws-page .ws-brand-title,
+.ws-page .ws-user-chip,
+.ws-page .ws-user-chip strong { color: var(--ws-text); }
+.ws-page .ws-card,
+.ws-page .ws-account-card { border-color: var(--ws-line); }
+.ws-page .ws-card-title-group h2,
+.ws-page .ws-card-header h2,
+.ws-page .ws-stat-value,
+.ws-page .ws-role-card-title,
+.ws-page .ws-choice-info strong,
+.ws-page .ws-action-text h4,
+.ws-page .ws-form h3,
+.ws-page .ws-member-name { color: var(--ws-text); }
+.ws-page .ws-card-subtitle,
+.ws-page .ws-stat-label,
+.ws-page .ws-role-card-desc,
+.ws-page .ws-choice-info small,
+.ws-page .ws-action-text p,
+.ws-page .ws-member-email,
+.ws-page .ws-create-invite-desc,
+.ws-page .ws-invite-meta-text,
+.ws-page .ws-account-info-text,
+.ws-page .ws-empty-state { color: var(--ws-muted); }
+.ws-page .ws-card-subtitle { font-size: 14px; line-height: 1.6; }
+.ws-page .ws-stat-label { font-size: 13px; }
+.ws-page .ws-role-guide-item { font-size: 13px; line-height: 1.55; }
+.ws-page .ws-role-guide-item strong { font-size: 14px; }
+.ws-page .ws-choice-info small,
+.ws-page .ws-action-text p,
+.ws-page .ws-field-group small,
+.ws-page .ws-account-info-text { font-size: 13px; line-height: 1.6; }
+.ws-page .ws-member-name { font-size: 15px; }
+.ws-page .ws-member-email { font-size: 13px; }
+.ws-page .ws-stat-item { border-color: var(--ws-line); }
+.ws-page .ws-btn-open-ledger {
+  background: #167a59;
+  color: #fff;
+}
+.ws-page .ws-btn-open-ledger:hover { background: #106748; color: #fff; }
+.ws-page .ws-badge-admin { color: #345d9f; }
+.ws-page .ws-badge-editor { color: #147a59; }
+.ws-page .ws-badge-viewer { color: #684fa0; }
+.ws-page .ws-badge-owner { color: #8a5b11; }
+.ws-page .ws-tabs-bar,
+.ws-page .ws-tab-btn,
+.ws-page .ws-tab-btn:hover,
+.ws-page .ws-tab-btn.is-active { color: var(--ws-muted); }
+.ws-page .ws-tab-btn.is-active { color: var(--ws-accent); }
+.ws-page .ws-tab-count,
+.ws-page .ws-me-tag { background: #eaf1ee; color: #3b5147; }
+.ws-page .ws-role-guide-item strong { color: var(--ws-text); }
+.ws-page .ws-item,
+.ws-page .ws-invite-item,
+.ws-page .ws-role-card,
+.ws-page .ws-action-card,
+.ws-page .ws-create-invite-box { border-color: var(--ws-line); }
+.ws-page .ws-avatar { border-color: #cbd8d2; background: #eaf1ee; color: #314b40; }
+.ws-page .ws-select,
+.ws-page .ws-input {
+  border-color: #c6d2cc;
+  background: #fff;
+  color: var(--ws-text);
+}
+.ws-page .ws-select:hover { border-color: var(--ws-accent); }
+.ws-page .ws-input:focus-visible { border-color: var(--ws-accent); outline-color: var(--ws-accent); }
+.ws-page .ws-choice-btn,
+.ws-page .ws-choice-btn:hover,
+.ws-page .ws-choice-btn.is-selected,
+.ws-page .ws-role-card,
+.ws-page .ws-role-card:hover,
+.ws-page .ws-role-card.is-selected { background: transparent; }
+.ws-page .ws-choice-btn { color: var(--ws-text); }
+.ws-page .ws-choice-btn:hover,
+.ws-page .ws-role-card:hover { background: #edf3f0; }
+.ws-page .ws-choice-btn.is-selected,
+.ws-page .ws-role-card.is-selected { background: #edf5f1; }
+.ws-page .ws-choice-icon { background: transparent; color: var(--ws-icon-primary); }
+.ws-page .ws-btn-subtle {
+  background: #fff;
+  color: #33463d;
+  border-color: #cbd7d1;
+}
+.ws-page .ws-btn-subtle:hover:not(:disabled) { background: #edf3f0; color: #17241f; border-color: #9aada3; }
+.ws-page .ws-btn-primary-sm { background: #eaf0f8; color: #345d9f; border-color: #c8d5e8; }
+.ws-page .ws-btn-danger-sm { background: #fff5f3; color: #a63830; border-color: #edc9c4; }
+.ws-page .ws-btn-danger-sm:hover:not(:disabled) { background: #fde9e5; color: #922b25; border-color: #dca49d; }
+.ws-page .ws-invite-code-pill { color: #345d9f; }
+.ws-page .ws-empty-state svg { color: var(--ws-icon-secondary); }
+.ws-page .ws-danger-card { border-color: #edcfcb; }
+.ws-page .ws-danger-card h4,
+.ws-page .ws-danger-summary { color: #a63830; }
+.ws-page .ws-danger-details { border-color: #edcfcb; background: #fff; }
+.ws-page .ws-danger-content { border-color: #edcfcb; }
+.ws-page .ws-danger-content p { color: #56675f; }
+.ws-page .ws-danger-summary:hover { background: #fff5f3; }
+.ws-page .ws-role-guide-item + .ws-role-guide-item { border-color: var(--ws-line); }
+.ws-page :is(button, a, select, input):focus-visible { outline-color: #147a59; }
+
+@media (max-width: 640px) {
+  .ws-page { padding: 14px 18px 52px; }
+  .ws-page .ws-nav-header { border-bottom: 1px solid var(--ws-line); }
+}
+
+.ws-optional-goal { border-top: 1px solid var(--ws-line); border-bottom: 1px solid var(--ws-line); padding: 14px 0; }
+.ws-optional-goal > summary { display: flex; align-items: center; gap: 10px; list-style: none; cursor: pointer; color: var(--ws-text); font-size: 13px; font-weight: 600; }
+.ws-optional-goal > summary::-webkit-details-marker { display: none; }
+.ws-optional-goal > summary span { color: var(--ws-muted); font-weight: 400; font-size: 12px; }
+.ws-optional-goal > summary svg { margin-left: auto; }
+.ws-optional-goal > .ws-field-group { margin: 18px 0 12px; }
+.ws-optional-goal > summary:focus-visible { outline: 2px solid var(--ws-accent); outline-offset: 4px; }
+
+/* Keep onboarding at the browser's actual size, independent of ledger zoom. */
+body:has(.ws-onboarding-page) { zoom: 1; }
+.ws-error { display: flex; align-items: center; gap: 8px; padding: 14px 16px; border: 1px solid #edc9c4; border-radius: 8px; background: #fff3f0; color: #a63830; font-size: 13px; line-height: 1.6; }
+.ws-onboarding-page .ws-error { width: min(100%, 600px); margin: 24px auto 0; }
+.ws-onboarding-page .ws-account-card { width: min(100%, 600px); margin: 0 auto; padding-top: 24px; }
+.ws-onboarding-page .ws-account-header { flex-wrap: wrap; gap: 12px; }
+.ws-onboarding-page .ws-account-row { flex-wrap: wrap; gap: 16px; }
+.ws-account-email { min-width: 0; color: var(--ws-muted); font-size: 12px; overflow-wrap: anywhere; }
+.ws-account-email strong { color: var(--ws-text); font-weight: 500; }
+.ws-onboarding-page .ws-back-link { font: inherit; font-size: 13px; cursor: pointer; }
+@media (max-width: 640px) {
+  .ws-onboarding-page .ws-brand-title { display: flex; font-size: 13px; }
+  .ws-onboarding-page .ws-back-link { display: none; }
+  .ws-onboarding-page .ws-user-chip { max-width: 140px; }
+  .ws-onboarding-page .ws-user-chip strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ws-onboarding-page .ws-account-actions-row { width: 100%; flex-wrap: wrap; }
+}
+.ws-page .ws-nav-user { color: var(--ws-text); text-decoration: none; }
+.ws-account-footer { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 16px; padding: 24px 0; border-top: 1px solid var(--ws-line); color: var(--ws-muted); font-size: 12px; line-height: 1.7; }
+.ws-account-footer a { display: inline-flex; align-items: center; gap: 4px; color: var(--ws-accent); font-weight: 600; text-decoration: none; }

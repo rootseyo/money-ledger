@@ -1,0 +1,75 @@
+.club-ledger { display: grid; gap: 18px; }
+.club-section-title { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.club-section-title h2, .club-section-title h3 { margin: 0; display: flex; align-items: center; gap: 6px; }
+.club-section-title h3 { font-size: .95rem; }
+.club-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.club-summary > div { padding: 16px; border: 1px solid var(--surface-border); border-radius: 12px; background: var(--ledger-subtle); }
+.club-summary span, .club-summary strong { display: block; }
+.club-summary span { color: var(--text-muted); font-size: .8rem; margin-bottom: 6px; }
+.club-summary strong { font-size: 1.2rem; }
+.club-member-name { text-align: left; color: var(--text-main); background: none; border: none; cursor: pointer; font: inherit; font-weight: 600; }
+.club-member-name[aria-pressed="true"] { color: var(--ledger-info); text-decoration: underline; text-underline-offset: 4px; }
+.club-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  background: var(--surface-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.club-member-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: .85rem;
+}
+.club-member-table th, .club-member-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+.club-member-table th {
+  color: var(--text-muted);
+  font-size: .74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: var(--ledger-head, rgba(0, 0, 0, 0.25));
+  border-bottom: 1px solid var(--surface-border);
+}
+.club-member-table tbody tr {
+  transition: background 0.1s ease;
+}
+.club-member-table tbody tr:hover {
+  background: var(--surface-hover);
+}
+.club-member-table td.club-amount {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.club-status { padding: 3px 8px; background: var(--ledger-subtle); border-radius: 20px; font-size: .75rem; }
+.club-status[data-paid="true"] { color: var(--success); background: rgba(16,185,129,.1); }
+.club-form { display: grid; gap: 12px; margin-top: 16px; }
+.club-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.club-form-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; }
+.club-feedback { font-size: .85rem; color: var(--text-main); margin: 8px 0; }
+.club-member-tools { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; margin-top: 12px; }
+.club-member-tools .ledger-field { flex: 1; min-width: 150px; margin: 0; }
+.transaction-receipts { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--surface-border); }
+.receipt-list { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 6px; }
+.receipt-list li, .receipt-list a { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.receipt-list li { padding: 8px 10px; border-radius: 8px; background: var(--ledger-subtle); justify-content: space-between; }
+.receipt-list a { color: var(--text-main); text-decoration: none; font-size: .83rem; flex: 1; }
+.receipt-list a:hover { text-decoration: underline; }
+.receipt-list a span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.receipt-list small, .receipt-hint { color: var(--text-muted); font-size: .73rem; }
+.receipt-upload { cursor: pointer; position: relative; }
+.receipt-upload:focus-within { outline: 2px solid var(--ledger-info); outline-offset: 3px; }
+.receipt-indicator { display: inline-flex; align-items: center; gap: 2px; flex-shrink: 0; color: var(--text-muted); }
+@media (max-width: 600px) {
+  .club-summary { gap: 6px; }
+  .club-summary > div { padding: 12px 9px; }
+  .club-summary strong { font-size: .95rem; }
+  .club-form-grid { grid-template-columns: 1fr; }
+}

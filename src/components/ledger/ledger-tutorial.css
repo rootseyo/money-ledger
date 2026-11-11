@@ -1,0 +1,15 @@
+.ledger-tour-layer { position:fixed; inset:0; width:auto; height:auto; max-width:none; max-height:none; margin:0; padding:0; border:0; background:transparent; overflow:visible; pointer-events:none; color:var(--text-main); }
+.ledger-tour-layer::backdrop { background:transparent; pointer-events:none; }
+.ledger-tour-highlight { position:absolute; box-sizing:border-box; border:2px solid var(--ledger-info); border-radius:11px; box-shadow:0 0 0 4px var(--ledger-info-soft, #38bdf822); pointer-events:none; }
+.ledger-tour-arrow { position:absolute; inset:0; width:100%; height:100%; overflow:visible; color:var(--ledger-info); pointer-events:none; }
+.ledger-tour-arrow path { fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.ledger-tour-note { position:absolute; box-sizing:border-box; width:min(300px,calc(100vw - 24px)); max-height:calc(100dvh - 24px); overflow:auto; padding:12px 14px; border:1px solid var(--ledger-info); border-radius:12px; color:var(--text-main); background:var(--surface-color); box-shadow:0 5px 20px #0002; pointer-events:auto; }
+.ledger-tour-note-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:11px; color:var(--ledger-info); font-weight:650; }
+.ledger-tour-note h2 { margin:5px 0 7px; font-size:15px; line-height:1.45; letter-spacing:-.025em; }
+.ledger-tour-note p { margin:0; font-size:13px; line-height:1.65; color:var(--text-muted); }
+.ledger-tour-note button { display:inline-flex; align-items:center; justify-content:center; gap:3px; min-height:32px; padding:4px 6px; border:0; border-radius:6px; background:transparent; color:var(--text-muted); font:inherit; font-size:12px; cursor:pointer; }
+.ledger-tour-note button:focus-visible { outline:2px solid var(--ledger-focus); outline-offset:2px; }
+.ledger-tour-controls, .ledger-tour-controls > div { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.ledger-tour-controls { margin-top:10px; }
+.ledger-tour-note button.ledger-tour-next { padding:5px 10px; color:var(--ledger-info); background:var(--ledger-info-soft, var(--ledger-subtle)); font-weight:700; }
+@media(pointer:coarse) { .ledger-tour-note button { min-height:40px; min-width:40px; } }

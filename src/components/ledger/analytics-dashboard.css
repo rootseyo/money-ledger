@@ -1,0 +1,164 @@
+.card-history-app .wealth-dashboard,
+.card-history-app .analytics-summary { padding:24px; border:1px solid var(--surface-border); border-radius:18px; box-shadow:none; }
+.analytics-section-heading { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+.analytics-section-heading h3 { margin:5px 0 0; color:var(--text-main); font-size:18px; font-weight:750; letter-spacing:-.5px; }
+.analytics-eyebrow { display:flex; align-items:center; gap:5px; color:var(--text-muted); font-size:12px; }
+.wealth-target { border:1px solid var(--surface-border); padding:7px 11px; border-radius:30px; color:var(--text-muted); font-size:12px; }
+.wealth-layout { display:grid; grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr); gap:32px; margin-top:28px; }
+.wealth-arrival { font-size:clamp(24px,3vw,36px); color:var(--text-main); letter-spacing:-1.4px; font-weight:750; margin-top:8px; }
+.wealth-duration { margin:8px 0 24px; font-size:13px; color:var(--text-muted); }
+.wealth-progress-heading { display:flex; justify-content:space-between; font-size:12px; color:var(--text-muted); }
+.wealth-progress-heading strong { color:#62a68a; margin-left:5px; }
+.wealth-progress { height:7px; border-radius:8px; background:var(--ledger-control-bg); margin-top:10px; overflow:hidden; }
+.wealth-progress i { display:block; height:100%; border-radius:8px; background:#62a68a; transition:width .3s; }
+.wealth-facts { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
+.wealth-facts span { font-size:12px; color:var(--text-muted); display:block; margin-bottom:7px; }
+.wealth-facts strong { font-size:clamp(14px,1.6vw,19px); color:var(--text-main); font-weight:650; overflow-wrap:anywhere; }
+.wealth-chart-panel { min-width:0; }
+.wealth-chart-caption { font-size:12px; color:var(--text-muted); }
+.wealth-chart { height:220px; margin-top:8px; }
+.wealth-chart-hidden { height:220px; display:grid; place-items:center; color:var(--text-muted); font-size:13px; }
+.wealth-simulator { margin-top:24px; padding:18px; background:var(--ledger-subtle); border:1px solid var(--surface-border); border-radius:12px; }
+.wealth-simulator-heading { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.wealth-simulator h4 { margin:0; font-size:14px; color:var(--text-main); }
+.wealth-simulator p { margin:5px 0 0; font-size:12px; color:var(--text-muted); }
+.wealth-simulator-controls { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-top:15px; }
+.wealth-amount-input { display:flex; align-items:center; background:var(--surface-color); border:1px solid var(--surface-border); border-radius:10px; padding:4px; }
+.wealth-amount-input button { border:0; background:var(--ledger-subtle); color:var(--text-main); width:34px; height:34px; display:grid; place-items:center; border-radius:7px; cursor:pointer; }
+.wealth-input-label { display:flex; align-items:center; gap:5px; padding:0 10px; }
+.card-history-app .wealth-input-label input { width:85px; max-width:85px; border:0; background:transparent; padding:4px 0; text-align:right; font-size:20px; font-weight:700; color:var(--text-main); box-shadow:none; }
+.wealth-input-label input::-webkit-inner-spin-button { appearance:none; }
+.wealth-input-label span { font-size:12px; color:var(--text-muted); white-space:nowrap; }
+.wealth-quick-amounts { display:flex; gap:6px; flex-wrap:wrap; }
+.wealth-quick-amounts button { border:1px solid var(--surface-border); background:transparent; padding:8px 12px; font-size:12px; border-radius:8px; color:var(--text-main); cursor:pointer; }
+.wealth-quick-amounts button[aria-pressed='true'] { border-color:#62a68a; color:#62a68a; background:rgba(98,166,138,.08); }
+.wealth-reset { display:flex; align-items:center; gap:4px; background:transparent; border:0; color:var(--text-muted); font-size:12px; cursor:pointer; white-space:nowrap; }
+.wealth-faster { display:flex; align-items:center; gap:4px; font-size:12px; color:#62a68a; }
+.wealth-explanation { margin-top:14px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; font-size:12px; color:var(--text-muted); line-height:1.7; }
+.wealth-explanation details { max-width:45%; text-align:right; }
+.wealth-explanation summary { cursor:pointer; white-space:nowrap; }
+.wealth-explanation details p { text-align:left; margin-bottom:0; }
+.analytics-month-picker { display:flex; align-items:center; gap:5px; }
+.analytics-month-picker .btn { padding:7px; }
+.card-history-app .analytics-month-picker input { width:145px; border:1px solid var(--surface-border); background:var(--ledger-subtle); color:var(--text-main); padding:7px 9px; border-radius:8px; font-size:13px; }
+.analytics-summary-scroll { overflow-x:auto; margin-top:20px; }
+.analytics-summary-table { border-collapse:collapse; width:100%; min-width:590px; font-size:14px; text-align:right; }
+.analytics-summary-table th,.analytics-summary-table td { padding:13px 12px; border-bottom:1px solid var(--surface-border); white-space:nowrap; }
+.analytics-summary-table thead th { font-size:12px; color:var(--text-muted); font-weight:500; }
+.analytics-summary-table th:first-child { text-align:left; padding-left:0; }
+.analytics-summary-table tbody th { color:var(--text-main); font-size:13px; font-weight:650; }
+.analytics-summary-table tbody td { color:var(--text-main); font-variant-numeric:tabular-nums; }
+.analytics-summary-table tbody .analytics-summary-growth { color:#62a68a; font-weight:650; }
+.analytics-note { margin:12px 0 0; font-size:12px; color:var(--text-muted); line-height:1.7; }
+.analytics-trend-heading { margin-top:26px; }
+.analytics-trend-heading h3 { font-size:14px; }
+.analytics-chart-legend { display:flex; gap:14px; color:var(--text-muted); font-size:12px; }
+.analytics-chart-legend span { display:flex; align-items:center; gap:5px; }
+.analytics-chart-legend i { width:7px; height:7px; border-radius:2px; }
+.analytics-year-chart { height:190px; margin-top:14px; }
+@media(max-width:700px) {
+  .card-history-app .wealth-dashboard,.card-history-app .analytics-summary { padding:18px 15px; border-radius:14px; }
+  .wealth-layout { grid-template-columns:1fr; gap:24px; margin-top:22px; }
+  .wealth-arrival { font-size:30px; }
+  .wealth-facts strong { font-size:18px; }
+  .wealth-chart { height:190px; }
+  .wealth-simulator { padding:14px; margin-top:18px; }
+  .wealth-explanation { flex-direction:column; gap:4px; }
+  .wealth-explanation details { max-width:100%; text-align:left; }
+  .analytics-section-heading h3 { font-size:16px; }
+  .analytics-month-picker { width:100%; justify-content:flex-end; }
+}
+
+/* Layout follows the space available to the dashboard, including narrow windows. */
+.analytics-dashboard-shell { container-type:inline-size; }
+.analytics-dashboard-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:12px; align-items:start; }
+.analytics-dashboard-grid > *, .analytics-detail-grid > *, .analytics-detail-charts > *, .analytics-detail-lists > * { min-width:0; }
+.analytics-detail-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:12px; }
+.analytics-detail-charts { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:12px; }
+.analytics-detail-lists { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:12px; }
+.analytics-category-chart,.analytics-daily-chart { width:100%; height:220px; }
+@container (min-width:1050px) {
+  .analytics-dashboard-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .card-history-app .analytics-dashboard-grid > .ledger-advanced { grid-column:1/-1; }
+  .analytics-dashboard-grid .wealth-layout { grid-template-columns:1fr; gap:16px; margin-top:18px; }
+  .analytics-dashboard-grid .wealth-chart { height:150px; }
+  .analytics-dashboard-grid .wealth-duration { margin-bottom:14px; }
+  .analytics-dashboard-grid .wealth-facts { margin-top:14px; }
+  .analytics-dashboard-grid .wealth-simulator { margin-top:16px; padding:12px; }
+  .analytics-dashboard-grid .wealth-arrival { font-size:28px; }
+  .analytics-dashboard-grid .analytics-summary-table { min-width:0; font-size:12px; }
+  .analytics-dashboard-grid .analytics-summary-table th,.analytics-dashboard-grid .analytics-summary-table td { padding:12px 5px; }
+  .analytics-detail-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .analytics-detail-charts,.analytics-detail-lists { display:contents; }
+  .analytics-dashboard-grid .analytics-budget-panel,.analytics-dashboard-grid .analytics-timeline-panel { align-self:stretch; }
+  .analytics-dashboard-grid .analytics-year-chart { height:235px; }
+}
+@container (min-width:1400px) {
+  .analytics-dashboard-grid { grid-template-columns:minmax(0,1.1fr) repeat(2,minmax(0,1fr)) minmax(0,.95fr); gap:12px; }
+  .card-history-app .analytics-dashboard-grid > .ledger-advanced,
+  .analytics-dashboard-grid .ledger-advanced-body,
+  .analytics-dashboard-grid .analytics-detail-grid { display:contents; }
+  .analytics-dashboard-grid .ledger-advanced-heading { display:none; }
+  .card-history-app .analytics-dashboard-grid .wealth-dashboard { grid-column:1; grid-row:1/4; align-self:stretch; padding:18px; }
+  .card-history-app .analytics-dashboard-grid .analytics-summary { grid-column:2/4; grid-row:1; padding:16px; }
+  .analytics-dashboard-grid .analytics-budget-panel { grid-column:4; grid-row:1; }
+  .analytics-dashboard-grid .analytics-timeline-panel { grid-column:2/4; grid-row:2; }
+  .analytics-dashboard-grid .analytics-merchants-panel { grid-column:4; grid-row:2; }
+  .analytics-dashboard-grid .analytics-category-panel { grid-column:2; grid-row:3; }
+  .analytics-dashboard-grid .analytics-daily-panel { grid-column:3; grid-row:3; }
+  .analytics-dashboard-grid .analytics-payments-panel { grid-column:4; grid-row:3; }
+  .analytics-dashboard-grid .analytics-budget-panel,
+  .analytics-dashboard-grid .analytics-timeline-panel,
+  .analytics-dashboard-grid .analytics-category-panel,
+  .analytics-dashboard-grid .analytics-daily-panel,
+  .analytics-dashboard-grid .analytics-merchants-panel,
+  .analytics-dashboard-grid .analytics-payments-panel { padding:12px !important; align-self:stretch; border-radius:12px; }
+  .analytics-dashboard-grid .analytics-section-heading { gap:8px; }
+  .analytics-dashboard-grid .analytics-section-heading h3 { font-size:15px; }
+  .analytics-dashboard-grid .analytics-summary-scroll { margin-top:10px; }
+  .analytics-dashboard-grid .analytics-summary-table th,.analytics-dashboard-grid .analytics-summary-table td { padding:8px 5px; }
+  .analytics-dashboard-grid .analytics-trend-heading { margin-top:12px; }
+  .analytics-dashboard-grid .analytics-year-chart { height:clamp(110px,15dvh,155px); margin-top:6px; }
+  .analytics-dashboard-grid .analytics-note { font-size:11px; margin-top:6px; }
+  .analytics-dashboard-grid .wealth-layout { gap:22px; margin-top:22px; }
+  .analytics-dashboard-grid .wealth-chart { height:clamp(150px,23dvh,230px); }
+  .analytics-dashboard-grid .wealth-simulator-controls { flex-direction:column; align-items:flex-start; }
+  .analytics-dashboard-grid .wealth-explanation { flex-direction:column; gap:4px; }
+  .analytics-dashboard-grid .wealth-explanation details { max-width:100%; text-align:left; }
+  .analytics-dashboard-grid .wealth-facts { grid-template-columns:1fr; gap:12px; }
+  .analytics-dashboard-grid .wealth-facts strong { font-size:18px; }
+  .card-history-app .analytics-dashboard-grid .ledger-daily-timeline-grid { grid-template-columns:repeat(16,minmax(0,1fr)); gap:4px; }
+  .card-history-app .analytics-dashboard-grid .ledger-daily-timeline-day { padding:6px 2px; gap:3px; }
+  .analytics-dashboard-grid .analytics-category-chart { height:clamp(175px,23dvh,220px); }
+  .analytics-dashboard-grid .analytics-daily-chart { height:clamp(125px,18dvh,185px); }
+}
+
+/* Keep a full month readable even inside a narrow desktop column. */
+.analytics-daily-panel { container:daily-chart / inline-size; }
+.analytics-daily-chart-scroll { width:100%; min-width:0; overflow-x:auto; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:var(--surface-border) transparent; padding-bottom:4px; }
+.analytics-daily-chart-scroll:focus-visible { outline:2px solid var(--ledger-focus); outline-offset:3px; border-radius:6px; }
+.analytics-daily-swipe-hint { display:none; margin:8px 0 0; color:var(--text-muted); font-size:11px; line-height:1.6; }
+@container daily-chart (max-width:650px) {
+  .analytics-daily-chart-scroll .analytics-daily-chart { width:1000px; height:230px; }
+  .analytics-daily-swipe-hint { display:block; }
+}
+.analytics-merchants-panel { container:merchant-list / inline-size; }
+.analytics-card-title { display:flex; align-items:center; gap:8px; margin:0 0 14px; color:var(--text-main); font-size:14px; font-weight:700; }
+.analytics-card-title svg { color:var(--ledger-info); flex:none; }
+.analytics-merchant-row { display:grid; grid-template-columns:22px minmax(0,1fr) max-content; align-items:center; gap:10px; padding:8px 6px; border-radius:8px; font-size:12px; }
+.analytics-merchant-row.is-clickable { cursor:pointer; }
+.analytics-merchant-row.is-clickable:hover { background:var(--ledger-subtle); }
+.analytics-merchant-row:focus-visible { outline:2px solid var(--ledger-focus); outline-offset:2px; }
+.analytics-merchant-rank { display:grid; place-items:center; width:22px; height:22px; border-radius:50%; background:var(--ledger-control-bg); color:var(--text-main); font-size:11px; font-weight:700; }
+.analytics-merchant-info { min-width:0; display:flex; flex-direction:column; gap:3px; }
+.analytics-merchant-name { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:600; color:var(--text-main); }
+.analytics-merchant-count { color:var(--text-muted); font-size:11px; }
+.analytics-merchant-amount { display:flex; align-items:center; gap:5px; white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--danger); font-weight:700; }
+.analytics-merchant-amount svg { flex-shrink:0; color:var(--ledger-info); }
+@container merchant-list (max-width:380px) {
+  .analytics-merchant-row { grid-template-columns:22px minmax(0,1fr); column-gap:9px; row-gap:4px; }
+  .analytics-merchant-rank { grid-row:1/3; align-self:start; }
+  .analytics-merchant-amount { grid-column:2; justify-self:end; }
+  .analytics-merchant-info { flex-direction:row; align-items:center; justify-content:space-between; gap:8px; }
+  .analytics-merchant-count { flex-shrink:0; }
+}

@@ -1,0 +1,148 @@
+.analytics-layout-toolbar { display:none; align-items:center; justify-content:space-between; gap:12px; padding:0 2px 12px; }
+.analytics-layout-toolbar > div { display:flex; align-items:center; gap:6px; flex-shrink:0; }
+.analytics-layout-toolbar button { display:inline-flex; align-items:center; gap:5px; border:1px solid var(--surface-border); background:var(--surface-color); color:var(--text-main); border-radius:8px; padding:7px 10px; font-size:12px; cursor:pointer; }
+.analytics-layout-toolbar button.is-primary { background:#047857; border-color:#047857; color:white; }
+.analytics-layout-toolbar button:disabled { opacity:.5; cursor:wait; }
+.analytics-layout-message { font-size:12px; color:var(--text-muted); }
+.analytics-widget { min-width:0; position:relative; }
+.analytics-widget-content { min-width:0; }
+.analytics-widget-tools { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:5px; padding:6px 8px; border:1px solid var(--surface-border); border-radius:10px 10px 0 0; background:var(--ledger-head); }
+.analytics-widget-tools button { display:inline-flex; align-items:center; gap:3px; padding:4px; border:0; background:transparent; color:var(--text-main); font-size:11px; border-radius:4px; cursor:pointer; }
+.analytics-widget-tools button:disabled { opacity:.3; cursor:default; }
+.analytics-widget-tools button:hover:not(:disabled) { background:var(--ledger-control-bg); }
+.analytics-widget-tools .analytics-widget-drag { cursor:grab; font-size:12px; touch-action:none; }
+.analytics-widget-actions { display:flex; align-items:center; gap:4px; }
+.analytics-widget-actions label { display:flex; align-items:center; gap:3px; font-size:10px; color:var(--text-muted); }
+.card-history-app .analytics-widget-actions select { width:57px; padding:2px; border:1px solid var(--surface-border); border-radius:4px; background:var(--surface-color); color:var(--text-main); font-size:11px; }
+.analytics-widget-resize { position:absolute; bottom:3px; right:3px; z-index:3; width:25px; height:25px; display:grid; place-items:center; border:0; background:var(--ledger-head); color:var(--ledger-info); border-radius:6px; cursor:nwse-resize; touch-action:none; }
+.analytics-widget.is-dragging { opacity:.45; }
+.analytics-widget-content > .glass-panel { min-width:0; box-sizing:border-box; }
+.analytics-widget:focus-within { z-index:1; }
+@media(min-width:1024px) and (pointer:fine) {
+  .analytics-layout-toolbar { display:flex; }
+  .card-history-app .analytics-dashboard-grid.is-custom-layout { grid-template-columns:repeat(12,minmax(0,1fr)); grid-auto-flow:row; align-items:start; gap:12px; }
+  .card-history-app .is-custom-layout > .ledger-advanced,
+  .card-history-app .is-custom-layout .ledger-advanced-body,
+  .card-history-app .is-custom-layout .analytics-detail-grid,
+  .card-history-app .is-custom-layout .analytics-detail-charts,
+  .card-history-app .is-custom-layout .analytics-detail-lists { display:contents; }
+  .card-history-app .is-custom-layout .ledger-advanced-heading { display:none; }
+  .card-history-app .is-custom-layout .analytics-widget-content > .glass-panel { grid-column:auto; grid-row:auto; align-self:auto; width:100%; height:100%; margin:0; padding:16px !important; border-radius:12px; }
+  .is-custom-layout .analytics-widget-content { height:var(--widget-height,auto); }
+  .is-custom-layout .analytics-widget[data-fixed-height='true'] .analytics-widget-content { overflow:auto; scrollbar-width:thin; border-radius:12px; }
+  .is-custom-layout.is-editing .analytics-widget { outline:1px dashed var(--surface-border-hover); border-radius:12px; }
+  .is-custom-layout.is-editing .analytics-widget-content > .glass-panel { border-top-left-radius:0; border-top-right-radius:0; }
+  .is-custom-layout .analytics-widget[data-fixed-height='true'] .analytics-year-chart,
+  .is-custom-layout .analytics-widget[data-fixed-height='true'] .analytics-category-chart,
+  .is-custom-layout .analytics-widget[data-fixed-height='true'] .analytics-daily-chart,
+  .is-custom-layout .analytics-widget[data-fixed-height='true'] .wealth-chart { height:var(--widget-chart-height,180px); }
+  .is-custom-layout .analytics-widget[data-fixed-height='true'] .analytics-daily-chart-scroll .analytics-daily-chart { height:var(--widget-chart-height,180px); }
+  .is-custom-layout .wealth-dashboard { container:wealth-card / inline-size; }
+  .card-history-app .is-custom-layout .wealth-layout { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:20px; margin-top:16px; }
+  .card-history-app .is-custom-layout .wealth-arrival { font-size:26px; }
+  .card-history-app .is-custom-layout .wealth-duration { margin:6px 0 12px; }
+  .card-history-app .is-custom-layout .wealth-facts { grid-template-columns:1fr 1fr; gap:12px; margin-top:14px; }
+  .card-history-app .is-custom-layout .wealth-facts strong { font-size:15px; }
+  .card-history-app .is-custom-layout .wealth-chart,.card-history-app .is-custom-layout .wealth-chart-hidden { height:155px; }
+  .card-history-app .is-custom-layout .wealth-simulator { margin-top:12px; padding:10px 12px; }
+  .card-history-app .is-custom-layout .wealth-simulator-heading { align-items:center; }
+  .card-history-app .is-custom-layout .wealth-simulator-heading p { display:none; }
+  .card-history-app .is-custom-layout .wealth-simulator-controls { flex-direction:row; gap:8px; margin-top:8px; }
+  .card-history-app .is-custom-layout .wealth-quick-amounts button { padding:6px 8px; }
+  .card-history-app .is-custom-layout .wealth-explanation { flex-direction:row; gap:8px; margin-top:8px; font-size:11px; }
+  .card-history-app .is-custom-layout .wealth-explanation details { max-width:45%; }
+  .card-history-app .is-custom-layout .analytics-summary-scroll { margin-top:10px; }
+  .card-history-app .is-custom-layout .analytics-summary-table { min-width:0; font-size:12px; }
+  .card-history-app .is-custom-layout .analytics-summary-table th,.card-history-app .is-custom-layout .analytics-summary-table td { padding:8px 4px; }
+  .card-history-app .is-custom-layout .analytics-trend-heading { margin-top:12px; }
+  .card-history-app .is-custom-layout .analytics-year-chart { height:145px; margin-top:6px; }
+  .card-history-app .is-custom-layout .analytics-note { font-size:11px; margin-top:6px; }
+  .card-history-app .is-custom-layout .analytics-section-heading h3 { font-size:15px; }
+  .card-history-app .is-custom-layout .analytics-category-chart { height:205px; }
+  .card-history-app .is-custom-layout .analytics-daily-chart { height:180px; }
+  .card-history-app .is-custom-layout .ledger-daily-timeline-grid { grid-template-columns:repeat(auto-fit,minmax(36px,1fr)); gap:4px; }
+}
+@container wealth-card (max-width:520px) {
+  .card-history-app .is-custom-layout .wealth-layout { grid-template-columns:1fr; gap:12px; }
+  .card-history-app .is-custom-layout .wealth-chart { height:145px; }
+  .card-history-app .is-custom-layout .wealth-explanation { flex-direction:column; }
+  .card-history-app .is-custom-layout .wealth-explanation details { max-width:100%; }
+}
+/* Mobile wrappers keep the established single-column layout and hide all editing. */
+@media(max-width:1023px), (pointer:coarse) {
+  .analytics-widget-tools,.analytics-widget-resize { display:none; }
+}
+.analytics-widget.is-drop-target { outline:2px solid #62a68a !important; border-radius:12px; box-shadow:0 0 0 4px rgba(98,166,138,.12); }
+@media(min-width:1024px) and (pointer:fine) {
+  .card-history-app .is-custom-layout .analytics-summary-table { min-width:510px; }
+}
+
+/* A twelve-column dashboard gives every row a predictable width and height. */
+@media (min-width:1024px) and (pointer:fine) {
+  .card-history-app .analytics-dashboard-grid.is-custom-layout {
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    align-items:stretch;
+    gap:16px;
+  }
+  .card-history-app .is-custom-layout .analytics-widget {
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+  }
+  .card-history-app .is-custom-layout .analytics-widget-content {
+    flex:1 1 auto;
+    min-width:0;
+  }
+  .card-history-app .is-custom-layout .analytics-widget-content > .glass-panel {
+    min-height:100%;
+    padding:20px !important;
+    border:1px solid var(--surface-border);
+    border-radius:16px;
+  }
+  .card-history-app .is-custom-layout .analytics-year-chart,
+  .card-history-app .is-custom-layout .analytics-category-chart,
+  .card-history-app .is-custom-layout .analytics-daily-chart {
+    height:240px;
+  }
+  .card-history-app .is-custom-layout .analytics-category-panel,
+  .card-history-app .is-custom-layout .analytics-daily-panel {
+    min-width:0;
+  }
+  .card-history-app .is-custom-layout .analytics-summary-table {
+    min-width:590px;
+    font-size:13px;
+  }
+  .card-history-app .is-custom-layout .analytics-summary-table th,
+  .card-history-app .is-custom-layout .analytics-summary-table td {
+    padding:12px 10px;
+  }
+  .card-history-app .is-custom-layout .analytics-section-heading h3 { font-size:17px; }
+  .card-history-app .is-custom-layout .analytics-widget[data-fixed-height='true'] .analytics-year-chart,
+  .card-history-app .is-custom-layout .analytics-widget[data-fixed-height='true'] .analytics-category-chart,
+  .card-history-app .is-custom-layout .analytics-widget[data-fixed-height='true'] .analytics-daily-chart {
+    height:var(--widget-chart-height,240px);
+  }
+  .card-history-app .is-custom-layout.is-club-ledger .analytics-widget[data-widget='timeline'] {
+    grid-column:span 12 !important;
+  }
+}
+
+/* A narrow workspace should use whole cards rather than squeeze charts. */
+@container (max-width:899px) {
+  .card-history-app .analytics-dashboard-grid.is-custom-layout {
+    grid-template-columns:minmax(0,1fr);
+  }
+  .card-history-app .is-custom-layout > .analytics-widget,
+  .card-history-app .is-custom-layout .analytics-detail-grid > .analytics-widget,
+  .card-history-app .is-custom-layout .analytics-detail-charts > .analytics-widget,
+  .card-history-app .is-custom-layout .analytics-detail-lists > .analytics-widget {
+    grid-column:1 / -1 !important;
+  }
+}
+
+@container daily-chart (max-width:650px) {
+  .card-history-app .is-custom-layout .analytics-daily-chart-scroll .analytics-daily-chart {
+    width:760px;
+    height:240px;
+  }
+}

@@ -1,0 +1,148 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id               String            @id @default(uuid())
+  email            String            @unique
+  password         String            // Hashed password
+  name             String
+  role             String            @default("OWNER")
+  isActive         Boolean           @default(true)
+  lastLoginAt      DateTime?
+  auditLogs        AuditLog[]
+  apiTokens        ApiToken[]
+  cardTransactions CardTransaction[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  @@map("users")
+}
+
+model CardTransaction {
+  id                 String    @id @default(uuid())
+  userId             String?   // User / Owner boundary
+  user               User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  sourceApp          String    // WOORI_CARD, WOORI_WON, KAKAO_PAY, KAKAO_BANK, TOSS_BANK, SMS, OTHER
+  type               String    // PAYMENT, DEPOSIT, WITHDRAWAL, CANCEL, OTHER
+  amount             Int       // 거래 금액 (원 단위)
+  merchant           String?   // 사용처 / 가맹점 / 보낸이 / 받는이
+  category           String?   // 카테고리 (FOOD, CAFE, TRANS, SHOPPING, LIVING, INSURANCE, HEALTH, CULTURE, TRANSFER, OTHER)
+  title              String    // 알림 제목
+  content            String    // 알림 본문 전문
+  balance            Int?      // 잔액 (포함된 경우)
+  cardOrAccount      String?   // 카드 또는 계좌 정보
+  packageName        String?   // 안드로이드 앱 패키지명
+  notifiedAt         DateTime  // 알림 발생 시각
+  isReported         Boolean   @default(false) // 일배치 슬랙 전송 완료 여부
+  reportedAt         DateTime? // 슬랙 전송 시각
+  rawData            Json?     // 안드로이드 추가 메타데이터
+  fixedExpenseId     String?
+  fixedOccurrenceKey String?   @unique
+  scheduledFor       DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  duesPayment        DuesPayment?
+  receipts           TransactionReceipt[]
+
+  @@index([userId])
+  @@index([isReported, notifiedAt])
+  @@index([notifiedAt])
+  @@index([sourceApp])
+  @@index([category])
+  @@index([scheduledFor])
+  @@map("card_transactions")
+}
+
+model LedgerMember {
+  id          String        @id @default(uuid())
+  workspaceId String
+  name        String
+  userId      String?
+  archived    Boolean       @default(false)
+  createdAt   DateTime      @default(now())
+  payments    DuesPayment[]
+
+  @@unique([workspaceId, userId])
+  @@index([workspaceId, archived])
+  @@map("ledger_members")
+}
+
+model DuesPayment {
+  transactionId String          @id
+  transaction   CardTransaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+  memberId      String
+  member        LedgerMember    @relation(fields: [memberId], references: [id], onDelete: Restrict)
+  month         String
+
+  @@index([memberId, month])
+  @@map("dues_payments")
+}
+
+model TransactionReceipt {
+  id            String          @id @default(uuid())
+  transactionId String
+  transaction   CardTransaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+  name          String
+  mimeType      String
+  size          Int
+  data          Bytes
+  createdAt     DateTime        @default(now())
+
+  @@index([transactionId, createdAt])
+  @@map("transaction_receipts")
+}
+
+model SystemSetting {
+  key         String   @id // Key formatted as "${userId}:${name}" or system key
+  userId      String?
+  value       String   // JSON string or text value
+  description String?
+  category    String   @default("GENERAL")
+  updatedBy   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+  @@index([category])
+  @@map("system_settings")
+}
+
+model ApiToken {
+  id          String    @id @default(uuid())
+  userId      String?
+  user        User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String    // 토큰 용도 / 설명
+  token       String    @unique // 토큰 값 (ct_live_...)
+  tokenPrefix String    // 토큰 앞자리 표시용 (ct_live_8f3a...)
+  expiresAt   DateTime? // 만료 일시
+  lastUsedAt  DateTime? // 마지막 사용 일시
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([token])
+  @@index([userId])
+  @@map("api_tokens")
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  target    String?
+  metadata  Json?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([action, createdAt])
+  @@map("audit_logs")
+}

@@ -1,0 +1,250 @@
+/* Keep the everyday ledger at the center; supporting tools stay quiet. */
+.card-history-app.ledger-home { max-width: 1500px; min-height: 100dvh; margin: 0 auto; padding: 28px 36px 64px; --ledger-radius: 6px; }
+[data-theme=light] .card-history-app.ledger-home {
+  --text-main: #1b2b23; --text-muted: #596b61; --text-dark: #596b61;
+  --surface-color: #fff; --surface-card: #fff; --surface-hover: #eff4f1;
+  --surface-border: #d8e1dc; --surface-border-hover: #a9beb0;
+  --ledger-subtle: #f6f8f7; --ledger-control-bg: #f2f5f3; --ledger-control-hover: #e5ede8;
+  --ledger-info: #197653; --ledger-info-soft: #edf5ef; --ledger-focus: #197653;
+  --ledger-head: #f0f4f1; --ledger-accent: #197653; --primary-gradient: linear-gradient(#197653,#197653);
+  --ledger-shadow: 0 8px 24px #16332612;
+  background: #f6f8f7;
+}
+html[data-theme=light]:has(.ledger-home), [data-theme=light] body:has(.ledger-home) { background: #f6f8f7; background-image: none; }
+.ledger-home .ledger-workspace-header { padding: 0 0 24px; border-bottom: 1px solid var(--surface-border); }
+.ledger-home .ledger-workspace-header h1 { display: flex; align-items: center; gap: 10px; font-size: 27px; }
+.ledger-home .ledger-workspace-header .ledger-muted { margin: 8px 0 0; font-size: 13px; }
+.card-history-app.ledger-home .btn { min-height: 38px; border-radius: 8px; }
+.card-history-app.ledger-home .ledger-icon-button { border: 1px solid var(--surface-border) !important; background: var(--surface-color) !important; box-shadow: 0 1px 2px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.08) !important; }
+.card-history-app.ledger-home .ledger-icon-button:hover { background: var(--surface-hover) !important; transform: translateY(-1px); box-shadow: 0 2px 5px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.12) !important; }
+.ledger-home .ledger-manage-button { gap: 7px; }
+.ledger-home .ledger-workspace-toolbar {
+  align-items: center;
+  padding: 4px 0 16px;
+  gap: 16px;
+}
+
+.card-history-app.ledger-home .ledger-main-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* 주요 메뉴 세그먼티드 트랙 */
+.card-history-app.ledger-home .ledger-nav-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: var(--ledger-control-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 관리 메뉴 세그먼티드 트랙 */
+.card-history-app.ledger-home .ledger-nav-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: var(--ledger-control-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 대메뉴 탭 버튼 (버튼/탭임이 직관적으로 느껴지는 어포던스) */
+.card-history-app.ledger-home .ledger-main-nav button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.card-history-app.ledger-home .ledger-main-nav button svg {
+  color: var(--text-muted);
+  transition: color 0.12s ease, transform 0.12s ease;
+  flex-shrink: 0;
+}
+
+/* 호버 시 떠오르는 피드백 */
+.card-history-app.ledger-home .ledger-main-nav button:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card-history-app.ledger-home .ledger-main-nav button:hover svg {
+  color: var(--ledger-info);
+}
+
+/* 클릭 누름 반응 */
+.card-history-app.ledger-home .ledger-main-nav button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* 활성 탭: 최상위 레이어로 솟아오른 Elevated Card */
+.card-history-app.ledger-home .ledger-main-nav button.is-active,
+.card-history-app.ledger-home .ledger-nav-primary button.is-active,
+.card-history-app.ledger-home .ledger-nav-secondary button.is-active {
+  background: var(--surface-color) !important;
+  color: var(--ledger-info) !important;
+  border: 1px solid var(--surface-border) !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.card-history-app.ledger-home .ledger-main-nav button.is-active svg {
+  color: var(--ledger-info) !important;
+}
+
+/* 관리 메뉴(보조 메뉴) 크기 조화 */
+.card-history-app.ledger-home .ledger-nav-secondary button {
+  font-size: 13px;
+  padding: 7px 12px;
+  gap: 6px;
+}
+
+/* 구분선 */
+.card-history-app.ledger-home .ledger-nav-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--surface-border);
+  margin: 0 2px;
+  opacity: 0.8;
+}
+
+/* 월 이동 컨트롤 세그먼트 통일 */
+.card-history-app.ledger-home .ledger-month-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 5px;
+  background: var(--ledger-control-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-history-app.ledger-home .ledger-month-control .btn {
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: 7px;
+  font-size: 13px;
+}
+.card-history-app.ledger-home .ledger-month-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 16px;
+}
+.card-history-app.ledger-home .ledger-month-summary > div {
+  padding: 18px 22px;
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.card-history-app.ledger-home .ledger-month-summary > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.22), 0 2px 4px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.card-history-app.ledger-home .ledger-month-summary span {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+.card-history-app.ledger-home .ledger-month-summary strong {
+  font-size: 1.55rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.card-history-app.ledger-home .ledger-month-summary small { display: none; }
+.card-history-app.ledger-home .ledger-month-summary--club { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ledger-home .ledger-task-strip { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; color: var(--text-muted); font-size: 12px; }
+.ledger-home .ledger-task-strip button { display: inline-flex; align-items: center; gap: 6px; border: 0; padding: 4px 0; font: inherit; font-weight: 600; color: var(--ledger-info); background: transparent; cursor: pointer; }
+.ledger-home .ledger-overview { border-bottom: 1px solid var(--surface-border); }
+.ledger-home .ledger-overview > summary { display: flex; align-items: center; gap: 8px; padding: 0 0 14px; font-size: 13px; color: var(--text-muted); cursor: pointer; list-style: none; }
+.ledger-home .ledger-overview > summary::-webkit-details-marker { display: none; }
+.ledger-home .ledger-overview > summary > svg:last-child { margin-left: auto; transition: transform .15s; }
+.ledger-home .ledger-overview[open] > summary > svg:last-child { transform: rotate(180deg); }
+.card-history-app.ledger-home .glass-panel,
+.card-history-app.ledger-home .ledger-surface {
+  border-radius: 14px !important;
+  background: var(--surface-color);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.18), 0 2px 6px -1px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  padding: 24px;
+}
+.card-history-app.ledger-home .ledger-category-summary-grid > * { border-radius: 0; box-shadow: none; }
+.card-history-app.ledger-home .ledger-category-summary--club .ledger-category-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ledger-home .ledger-section-heading h2 { font-size: 19px; letter-spacing: -.025em; }
+.ledger-home .ledger-mode-label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 5px; }
+.ledger-home .ledger-optional-goal > .ledger-section-heading { padding: 10px 0 22px; }
+.ledger-home .ledger-optional-goal .ledger-muted { margin-top: 8px; font-size: 13px; }
+.ledger-home :is(.ledger-main-nav, .ledger-primary-actions, .ledger-task-strip, .ledger-workspace-header, .ledger-overview > summary) svg { color: var(--ledger-info); }
+.ledger-home :is(.ledger-main-nav, .ledger-primary-actions, .ledger-task-strip, .ledger-workspace-header, .ledger-overview > summary) :not(.btn-primary) > svg :is(path, circle, rect, line, polyline):nth-child(even) { stroke: #6682af; }
+.card-history-app.ledger-home .btn-primary svg,
+.ledger-home .ledger-primary-actions .btn-primary svg { color: #fff !important; }
+.card-history-app.ledger-home .btn-primary svg *,
+.ledger-home .ledger-primary-actions .btn-primary svg * { stroke: #fff !important; color: #fff !important; }
+@media(max-width: 900px) { .card-history-app.ledger-home { padding: 22px 24px 52px; }.ledger-home .ledger-workspace-header { align-items: flex-start; }.ledger-home .ledger-primary-actions { flex-wrap: wrap; } }
+@media(max-width: 700px) {
+  .card-history-app.ledger-home { padding: 20px 16px 44px; }
+  .ledger-home .ledger-workspace-header { gap: 16px; padding-bottom: 18px; }
+  .ledger-home .ledger-workspace-header > div > p { display: block; max-width: 300px; line-height: 1.6; }
+  .ledger-home .ledger-workspace-header h1 { font-size: 23px; }
+  .ledger-home .ledger-primary-actions { width: 100%; gap: 5px; }
+  .ledger-home .ledger-primary-actions .btn { padding: 8px; }
+  .ledger-home .ledger-primary-actions > .btn-primary { margin-right: auto; }
+  .ledger-home .ledger-manage-button { font-size: 12px; }
+  .card-history-app.ledger-home .ledger-primary-actions .ledger-menu { display: block; }
+  .card-history-app.ledger-home .ledger-nav-primary { display: grid; grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)); border: 0; border-radius: 0; padding: 0; background: transparent; gap: 0; }
+  .card-history-app.ledger-home .ledger-nav-primary button { flex-direction: row; min-height: 42px; padding: 8px 2px; gap: 5px; box-shadow: none; font-size: 12px; }
+  .card-history-app.ledger-home .ledger-nav-primary .is-active { box-shadow: inset 0 -2px var(--ledger-info); }
+  .card-history-app.ledger-home .ledger-nav-secondary { display: flex; flex-wrap: wrap; justify-content: flex-start; overflow: visible; gap: 4px 12px; }
+  .card-history-app.ledger-home .ledger-nav-secondary button { border: 0; background: transparent; border-radius: 0; padding: 5px 0; font-size: 11px; }
+  .card-history-app.ledger-home .ledger-month-summary > div { padding: 14px 12px; }
+  
+  .card-history-app.ledger-home .ledger-month-summary strong { font-size: 20px; }
+  .card-history-app.ledger-home .ledger-month-summary--club { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .card-history-app.ledger-home .ledger-month-summary--club > div { padding: 12px 8px; border-top: 0; }
+  
+  .card-history-app.ledger-home .ledger-month-summary--club > div + div { border-left: 1px solid var(--surface-border); }
+  .card-history-app.ledger-home .ledger-month-summary--club strong { font-size: clamp(14px, 4.2vw, 20px); }
+  .card-history-app.ledger-home .ledger-month-summary--club span { font-size: 11px; }
+  .card-history-app.ledger-home .ledger-category-summary--club .ledger-category-summary-grid { grid-template-columns: 1fr; }
+}
+
+.ledger-home .ledger-goal-empty { max-width: 600px; padding: 28px 0; border-top: 1px solid var(--surface-border); }
+.ledger-home .ledger-goal-empty > svg { color: var(--ledger-info); margin-bottom: 12px; }
+.ledger-home .ledger-goal-empty p { line-height: 1.8; margin-bottom: 20px; }
